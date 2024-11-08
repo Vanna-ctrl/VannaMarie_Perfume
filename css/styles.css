@@ -187,18 +187,17 @@
     font-size: 2.5em; /* Base size for large screens */
 }
 
-.hero-content p {
-    color: black;
-    font-size: 1.1em;
+.hero-content {
+    padding-left: 0;
+    margin-left: 0;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .hero-content {
-        width: 80%;
-        padding: 20px;
-        top: 0; /* Adjusting top offset */
+        padding-left: 0;
+        margin-left: 0;
     }
+}
 
     .hero-content h1 {
         font-size: 2em; /* Smaller font size for tablets */
@@ -247,9 +246,10 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .hero-content {
-        width: 80%;
-        padding: 20px;
-        top: 0; /* Reset the top offset on smaller screens */
+        padding-left: 0;
+        margin-left: 0;
+    }
+}
     }
 
     .hero-content h1 {
@@ -261,10 +261,12 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .hero-content {
-        width: 90%;
-        padding: 15px;
+        padding-left: 0;
+        margin-left: 0;
+    }
+}
     }
 
     .hero-content h1 {
