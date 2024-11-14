@@ -167,116 +167,10 @@
 
     #hero {
         background-color: rgba(71, 12, 40, 0); /* You can use color names as well */
-        padding: 50px;
+        padding: 0px;
         text-align: center;
     }
-
-    /* Base styling for the hero content */
-.hero-content {
-    width: 50%;
-    padding: 50px;
-    font-family: 'Playfair Display', serif;
-    color: #333333;
-    position: relative;
-    z-index: 1;
-    top: -10px;
-}
-
-/* Base styling for the <h1> and <p> */
-.hero-content h1 {
-    font-size: 2.5em; /* Base size for large screens */
-}
-
-.hero-content {
-    padding-left: 0;
-    margin-left: 0;
-}
-
-@media (max-width: 768px) {
-    .hero-content {
-        padding-left: 0;
-        margin-left: 0;
-    }
-}
-
-    .hero-content h1 {
-        font-size: 2em; /* Smaller font size for tablets */
-    }
-
-    .hero-content p {
-        font-size: 1em;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content {
-        width: 90%;
-        padding: 15px;
-    }
-
-    .hero-content h1 {
-        font-size: 1.5em; /* Smallest font size for mobile */
-    }
-
-    .hero-content p {
-        font-size: 0.95em;
-    }
-}
-
-/* Base styling */
-.hero-content {
-    width: 50%;
-    padding: 50px;
-    font-family: 'Playfair Display', serif;
-    color: #333333;
-    position: relative;
-    z-index: 1;
-    top: -10px;
-}
-
-.hero-content h1 {
-    font-size: 2.5em; /* Adjusted for large screens */
-}
-
-.hero-content p {
-    color: black;
-    font-size: 1.1em;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .hero-content {
-        padding-left: 0;
-        margin-left: 0;
-    }
-}
-    }
-
-    .hero-content h1 {
-        font-size: 2em;
-    }
-
-    .hero-content p {
-        font-size: 1em;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-content {
-        padding-left: 0;
-        margin-left: 0;
-    }
-}
-    }
-
-    .hero-content h1 {
-        font-size: 1.5em;
-    }
-
-    .hero-content p {
-        font-size: 0.95em;
-    }
-}
+    
 
     /* text
      */
@@ -449,7 +343,7 @@ main {
 
 h1 {
     font-size: 2em;
-    margin: 0.67em 0;
+    margin: 0;
 }
 
 /* ------------------------------------------------------------------- 
@@ -962,12 +856,12 @@ textarea {
 }
 
 .align-x-center {
-    margin-right: auto;
-    margin-left: auto;
+    margin-right: 0;
+    margin-left: 0;
 }
 
 .align-x-left {
-    margin-right: auto;
+    margin-right: 0;
 }
 
 .align-x-right {
@@ -1364,7 +1258,44 @@ textarea {
         padding: 0;
     }
 }
+.s-header__nav-wrap {
+    padding: 10px 0; /* Adjust the padding to control height (top and bottom) */
+    background-color: transparent;
+}
 
+.s-header__nav-wrap {
+    height: 60px; /* Set your desired height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+.s-header__nav li a {
+    padding: 15px 20px;  /* Adjust the padding around each link */
+    line-height: 60px;   /* Adjust the line-height to vertically center the text */
+}
+@media (max-width: 768px) {
+    .s-header__nav-wrap {
+        height: 50px;  /* Smaller height for mobile */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .s-header__content {
+        flex-direction: column; /* Stack the elements vertically */
+        align-items: center;
+    }
+    .s-header__logo {
+        margin-bottom: 10px; /* Optional: Add spacing between logo and menu */
+    }
+    .s-header__nav-wrap {
+        margin-top: 10px; /* Optional: Add some spacing above the nav */
+    }
+    .back-to-home {
+        margin-top: 10px; /* Optional: Add some spacing above the button */
+    }
+}
 
 
 /* ===================================================================
@@ -3173,6 +3104,11 @@ input::-moz-focus-inner {
  * # site header
  *
  * ------------------------------------------------------------------- */
+ .s-header {
+    margin: 0;
+    padding: 0;
+}
+
 .s-header {
     z-index: 100;
     width: 100%;
@@ -3204,7 +3140,7 @@ input::-moz-focus-inner {
 }
 
 .s-header.sticky .s-header__content .btn {
-    --btn-height: calc(var(--vspace-btn) - 1.6rem) !important;
+    --btn-height: calc(var(--vspace-btn) - 1.rem) !important;
 }
 
 .s-header.sticky .header-nav a {
@@ -3219,6 +3155,87 @@ input::-moz-focus-inner {
 .s-header__content {
     height: 8.8rem;
     position: relative;
+}
+/* General Header Styling */
+.s-header {
+    background-color: transparent; /* Or any other color instead of black */
+    padding: 20px;
+}
+
+/* Navigation Menu Styling */
+.s-header__nav-wrap {
+    display: flex;
+    justify-content: var(--width-full);
+}
+
+.s-header__nav {
+    list-style: none;
+    display: flex;
+    margin: 5;
+    padding: 5;
+}
+
+.s-header__nav li {
+    margin: 0 15px; /* Space between nav items */
+}
+
+.s-header__nav li a {
+    color: #333; /* Set color for links */
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    font-family: 'Lato', sans-serif;
+}
+
+.s-header__nav li a:hover {
+    color: #007bff; /* Set hover color for links */
+}
+
+/* Remove background when scrolling (if applicable) */
+.s-header.scrolled {
+    background-color: transparent; /* Or any other color */
+}
+
+/* Button Styling */
+.btn--primary {
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn--primary:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .s-header__content {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: flex-start; /* Align to the left for mobile */
+    }
+
+    .s-header__nav {
+        flex-direction: column;
+        margin-top: 10px; /* Space between menu and other elements */
+    }
+
+    .s-header__nav li {
+        margin: 5px 0; /* Space between menu items vertically */
+    }
+
+    .s-header__logo {
+        margin-bottom: 10px; /* Add space between logo and menu */
+    }
+    
+    .btn--primary {
+        margin-top: 15px; /* Add space above the button */
+    }
+
+    .s-header__menu-toggle {
+        display: block; /* Show menu toggle button on mobile */
+    }
 }
 
 
@@ -4240,7 +4257,7 @@ html.no-csstransitions .s-hero__content {
 
 .full-width-section {
     width: 200%;
-    padding: 20px; /* Space inside the section */
+    padding: 0px; /* Space inside the section */
     padding-top: 5em; /* Space above the section */
     background-color: #f8ebf1;
     text-align: center;
@@ -4250,7 +4267,7 @@ html.no-csstransitions .s-hero__content {
 .full-width-section {
     width: 200%;
     padding-top: 15px; /* Reduce padding inside the section at the top */
-    padding-bottom: 20px; /* Adjust as needed */
+    padding-bottom: 0px; /* Adjust as needed */
     margin-top: 0; /* Remove any external margin above the section */
     background-color: #f8ebf1; /* Optional background color */
     text-align: center;
@@ -4923,7 +4940,7 @@ html.no-csstransitions .s-hero__content {
 }
 
 .s-contact {
-    background-color: hsla(359, 100%, 91%, 1);
+    background-color: rgb(250, 245, 245);
     padding-top: calc(6 * var(--space));
     padding-bottom: var(--vspace-2);
 }
@@ -5212,5 +5229,299 @@ html.no-csstransitions .s-hero__content {
     }
     .ss-copyright {
         font-size: 1.4rem;
+    }
+}
+/* General padding adjustments */
+body {
+    padding: 10px;
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .s-header__content, .s-about__intro-text, .s-about__photo-block {
+        padding: 50px; /* Increase padding for larger screens */
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .s-header__content, .s-about__intro-text, .s-about__photo-block {
+        padding: 30px; /* Moderate padding for medium screens */
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767px) {
+    .s-header__content, .s-about__intro-text, .s-about__photo-block {
+        padding: 20px; /* Reduced padding for smaller screens */
+    }
+    
+    .s-header__logo img {
+        width: 80px; /* Smaller logo for mobile screens */
+    }
+
+    h1, .display-1 {
+        font-size: 24px; /* Adjust header font size for readability */
+    }
+    
+    /* Adjusting text alignment and padding */
+    .lead, .s-contact__email {
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+/* Carousel adjustments */
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+}
+
+/* Prevent horizontal overflow */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Responsive container to avoid overflow */
+.container, .row, .column, .carousel-inner, .carousel-item {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+/* Default styling */
+.column.large-6.w-900-stack.s-about__intro-text {
+    padding: 20px; /* Adds padding for content spacing */
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 767px) {
+    .column.large-6.w-900-stack.s-about__intro-text {
+        width: 100%; /* Make the column full-width on small screens */
+        padding: 10px; /* Adjust padding for mobile */
+    }
+
+    .full-width-section {
+        text-align: center; /* Center-align text for mobile readability */
+    }
+
+    .display-1, h3 {
+        font-size: 24px; /* Adjust heading font size for smaller screens */
+    }
+
+    .section-description {
+        font-size: 16px; /* Adjust paragraph font size for readability */
+        padding: 10px; /* Add padding for spacing */
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 991px) {
+    .column.large-6.w-900-stack.s-about__intro-text {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .display-1, h3 {
+        font-size: 28px;
+    }
+    
+    .section-description {
+        font-size: 18px;
+    }
+}
+/* Ensure the image container is displayed on all screens */
+.s-about__photo-block {
+    display: block !important;
+}
+
+/* Responsive image sizing */
+.s-about__photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Adjust image width for smaller screens */
+@media (max-width: 767px) {
+    .s-about__photo img {
+        max-width: 100%;
+    }
+}
+/* Style for the entire section */
+.full-width-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.full-width-section h3 {
+    font-size: 2rem; /* Use rem to scale with screen size */
+    margin-bottom: 10px;
+}
+
+.full-width-section .section-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 800px; /* Ensure text doesn't stretch too much on large screens */
+    margin: 0 auto; /* Centers the paragraph */
+}
+
+/* Make the section responsive on smaller screens */
+@media screen and (max-width: 768px) {
+    .full-width-section h3 {
+        font-size: 1.5rem; /* Slightly smaller title on smaller screens */
+    }
+
+    .full-width-section .section-description {
+        font-size: 0.9rem; /* Adjust font size for readability on smaller screens */
+        padding: 0 15px; /* Add padding for better spacing */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .full-width-section h3 {
+        font-size: 1.2rem; /* Further reduce the title size on very small screens */
+    }
+
+    .full-width-section .section-description {
+        font-size: 0.8rem; /* Adjust font size for even smaller screens */
+        padding: 0 10px; /* More padding on very small screens */
+    }
+}
+/* Style for the entire section */
+.full-width-section {
+    padding: 20px;
+    text-align: center;
+    width: 100%; /* Ensure full-width */
+    box-sizing: border-box; /* Prevent content from overflowing */
+}
+
+.full-width-section h3 {
+    font-size: 2rem; /* Base size for larger screens */
+    margin-bottom: 20px;
+    font-weight: bold; /* Add some emphasis to the heading */
+}
+
+.full-width-section .section-description {
+    font-size: 1.1rem; /* Larger font for readability */
+    line-height: 1.6; /* For better spacing between lines */
+    max-width: 1000px; /* Max width for large screens */
+    margin: 0 auto; /* Centers the content horizontally */
+    padding: 0 20px; /* Padding for better readability */
+}
+
+/* Make the section responsive on smaller screens */
+@media screen and (max-width: 1024px) {
+    .full-width-section h3 {
+        font-size: 1.8rem; /* Slightly smaller on tablets */
+    }
+
+    .full-width-section .section-description {
+        font-size: 1rem; /* Adjust font size for tablets */
+        padding: 0 30px; /* Adjust padding */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .full-width-section h3 {
+        font-size: 1.6rem; /* Even smaller heading on medium screens */
+    }
+
+    .full-width-section .section-description {
+        font-size: 0.95rem; /* Smaller text for mobile-friendly layout */
+        padding: 0 20px; /* Adjust padding for better fit */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .full-width-section h3 {
+        font-size: 1.4rem; /* Even smaller heading on mobile */
+    }
+
+    .full-width-section .section-description {
+        font-size: 0.9rem; /* Adjust font size for very small screens */
+        padding: 0 15px; /* Further adjust padding */
+    }
+}
+/* Style for the left side content */
+.responsive-content {
+    width: 50%;
+    padding: 50px;
+    font-family: 'Playfair Display', serif;
+    color: #333333;
+    position: relative;
+    z-index: 1;
+    top: -10px;
+    box-sizing: border-box; /* Ensures padding is included in the width calculation */
+}
+
+/* Style for the heading */
+.responsive-content h1 {
+    font-size: 5rem; /* Base size for larger screens */
+    margin-bottom: 20px;
+}
+
+/* Style for the paragraph */
+.responsive-content p {
+    font-size: 3rem; /* Base size for larger screens */
+    color: black;
+}
+
+/* Responsive on medium screens (tablets, max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .responsive-content {
+        width: 80%; /* Make content wider on medium screens */
+        padding: 30px; /* Reduce padding on medium screens */
+        top: 0px; /* Adjust position */
+    }
+
+    .responsive-content h1 {
+        font-size: 5rem; /* Slightly smaller font size on tablets */
+    }
+
+    .responsive-content p {
+        font-size: 3rem; /* Smaller text on tablets */
+    }
+}
+
+/* Responsive on smaller screens (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .responsive-content {
+        width: 90%; /* Make content nearly full width on mobile */
+        padding: 20px; /* Reduce padding even further on small screens */
+    }
+
+    .responsive-content h1 {
+        font-size: 5rem; /* Smaller font size on small screens */
+    }
+
+    .responsive-content p {
+        font-size: 3rem; /* Smaller text on small screens */
+    }
+}
+
+/* Default layout (for large screens) */
+.content-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align the content */
+}
+
+/* Ensure video and social media are stacked on smaller screens */
+.social-media-links, .s-hero__video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Space between the social media and video */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .social-media-links {
+        margin-bottom: 20px; /* Add space below social media links */
+    }
+    .s-hero__video {
+        margin-top: 30px; /* Add space between social media and video button */
     }
 }

@@ -23,6 +23,16 @@
    /* preloader
     * -------------------------------------------------- */
    // JavaScript to change navbar background color when scrolling
+   window.onscroll = function() { hideNavbarOnScroll() };
+
+function hideNavbarOnScroll() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.querySelector(".s-header__nav-wrap").style.display = "none";
+    } else {
+        document.querySelector(".s-header__nav-wrap").style.display = "block";
+    }
+}
+
 window.onscroll = function() {changeNavbarBackground()};
 
 function changeNavbarBackground() {
